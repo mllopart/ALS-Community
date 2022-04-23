@@ -11,8 +11,12 @@
 AALSCharacter::AALSCharacter(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
+
+	CharMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("CharMesh"));
+	CharMesh->SetupAttachment(GetMesh());
+
 	HeldObjectRoot = CreateDefaultSubobject<USceneComponent>(TEXT("HeldObjectRoot"));
-	HeldObjectRoot->SetupAttachment(GetMesh());
+	HeldObjectRoot->SetupAttachment(CharMesh);
 
 	SkeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletalMesh"));
 	SkeletalMesh->SetupAttachment(HeldObjectRoot);

@@ -56,6 +56,9 @@ public:
 	TObjectPtr<USceneComponent> HeldObjectRoot = nullptr;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ALS|Component")
+	TObjectPtr<USkeletalMeshComponent> CharMesh = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ALS|Component")
 	TObjectPtr<USkeletalMeshComponent> SkeletalMesh = nullptr;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ALS|Component")
